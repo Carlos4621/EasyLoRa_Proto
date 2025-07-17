@@ -7,8 +7,9 @@ message Envelope {
     bool requiresACK = 1;
     
     oneof PosibleData {
-        string dataToSend = 2 [(nanopb).max_size = 236];
+        bytes dataToSend = 2 [(nanopb).max_size = 236];
         ModuleConfiguration configuration = 3;
         bool ACK = 4;
+        bool requestConfiguration = 5;
     }
 }
